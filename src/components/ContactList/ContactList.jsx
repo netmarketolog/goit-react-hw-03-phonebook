@@ -1,5 +1,5 @@
-import ContactItem from 'components/ContactItem/ContactItem';
 import React from 'react';
+import ContactItem from 'components/ContactItem/ContactItem';
 import PropTypes from 'prop-types';
 import { Contact, Markup } from './ContactList.styled';
 

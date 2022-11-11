@@ -1,8 +1,11 @@
+import { Component } from 'react';
+
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-import { Component } from 'react';
+
 import { Container } from './PhoneBook.styled';
+
 export class PhoneBook extends Component {
   state = {
     contacts: [
@@ -30,17 +33,13 @@ export class PhoneBook extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
-  formSubmitHander = ({ id, name, number }) => {
+  formSubmitHander = date => {
     const { contacts } = this.state;
-    const newContact = {
-      id,
-      name,
-      number,
-    };
-    contacts.find(contact => contact.name === name)
-      ? alert(`${name} is already in contacts`)
+
+    contacts.find(contact => contact.name === date.name)
+      ? alert(`${date.name} is already in contacts`)
       : this.setState(({ contacts }) => ({
-          contacts: [newContact, ...contacts],
+          contacts: [date, ...contacts],
         }));
   };
   changeFilter = e => {
